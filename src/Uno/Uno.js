@@ -23,6 +23,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/*
+INSTRUCTIONS:
+Often times, we want to split our UI into smaller, more focused components to make our code easier to read and test. 
+In this challenge, the Badge component is composed of several smaller components. 
+Pass the Badge component's props down and apply them to to the child components to render the UI.
+
+TASKS:
+Give the image a proper alt tag using the author's name
+Make sure the badge displays the profile image correctly
+Display the author's name in the badge's heading
+Display the author's handle below the heading
+Pass the click handler to the button so that it opens an alert when clicked
+ */
+
 function Avatar({ img, name }) {
   return <img src={img} alt={name} />;
 }
@@ -35,6 +49,10 @@ function Handle({ handle }) {
   return <p>{handle}</p>;
 }
 
+const clickHandler = () => {
+  alert("Added!");
+};
+
 function Badge({ user, style }) {
   return (
     <div style={style}>
@@ -42,7 +60,7 @@ function Badge({ user, style }) {
       <div>
         <Name name={user.name} />
         <Handle handle={user.handle} />
-        <button onClick={() => {}}>Add Friend</button>
+        <button onClick={clickHandler}>Add Friend</button>
       </div>
     </div>
   );
