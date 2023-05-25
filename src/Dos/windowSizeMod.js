@@ -3,6 +3,18 @@ import { useState, useEffect } from "react";
 import useMediaQuery from "./useMediaQuery";
 import { phone, tablet, laptop, desktop } from "./icons";
 
+/*
+INSTRUCTIONS:
+useMediaQuery is a custom hook that listens for media query changes and returns whether the query currently matches. 
+(It is a wrapper around the matchMedia API.) To implement this hook, you will need to complete the following tasks:
+
+TASKS:
+The hook should accept a single argument, query, which is a string representing a valid CSS media query.
+Should set up an event listener for the "change" event on the matchMedia object and returns a cleanup function to remove the event listener.
+The hook must return the current matching status of the media query (a boolean) as its output.
+The hook should properly clean up the event listener when the component using the hook is unmounted or the media query changes.
+ */
+
 export default function App() {
   const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
   const isMediumDevice = useMediaQuery(
