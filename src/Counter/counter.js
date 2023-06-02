@@ -61,16 +61,13 @@ const Counter = () => {
 
   const startTimer = () => {
     const timex = setTimeout(() => {
-      setSeconds((seconds) => seconds + 1);
+      setSeconds(seconds + 1);
       if (seconds > 59) {
         setSeconds(0);
         setMins((mins) => mins + 1);
         if (mins > 59) {
           setMins(0);
           setHours((hours) => hours + 1);
-          if (hours < 10) {
-            `0${{ hours }}`;
-          } else hours;
         }
         if (mins < 10) {
           `0${mins}:`;
@@ -81,6 +78,7 @@ const Counter = () => {
       } else seconds;
       startTimer();
     }, 1000);
+    global.timex = timex;
   };
 
   const startTimerHandler = () => {
