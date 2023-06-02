@@ -136,3 +136,4 @@ const Counter = () => {
     </Box>
   );
 };
+export default Counter;
